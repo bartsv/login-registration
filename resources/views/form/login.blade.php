@@ -23,7 +23,7 @@
 
             </div>
             <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-default" onclick="Login('{{route('login')}}');">Login</button>
+                <button class="btn btn-default" id="log" onclick="Login('{{route('login')}}');">Login</button>
             </div>
         </div>
     </div>
