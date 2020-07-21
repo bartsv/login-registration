@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
 
+        'tymon\jwtauth\Providers\LaravelServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -227,6 +228,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'JWTAuth' => 'tymon\jwtauth\Facades\JWTAuth',
+        'JWTFactory' => 'tymon\jwtauth\Facades\JWTFactory'
     ],
 
 ];
