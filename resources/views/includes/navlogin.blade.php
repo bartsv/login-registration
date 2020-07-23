@@ -33,6 +33,6 @@
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 
-      @include('includes.log')
+      @include('login')
   </div>
 </nav>

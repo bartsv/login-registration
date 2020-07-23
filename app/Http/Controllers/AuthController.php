@@ -37,10 +37,11 @@ class AuthController extends Controller {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return response()->json(['mail'=>$request->input('email'),'token'=>$this->createNewToken($token)],200) ;
+        $user = Auth::user();
+        return response()->json(['id'=>$user->id,'name'=>$user->name,'mail'=>$user->email,'url'=>url('user/dashboard'),'token'=>$this->createNewToken($token)],200) ;
     }
 
-    /**
+    /**e
      * Register a User.
      *
      * @return \Illuminate\Http\JsonResponse

@@ -20,7 +20,9 @@
                     <input type="password" id="defaultForm-pass" class="form-control validate">
                     <label data-error="wrong" data-success="right" for="defaultForm-pass">Your password</label>
                 </div>
-
+                <div>
+                    <p id="error"></p>
+                </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 <button class="btn btn-default" id="log" onclick="return Login('{{route('login')}}');">Login</button>

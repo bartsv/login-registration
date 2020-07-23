@@ -18,11 +18,18 @@ function Login(url) {
                     console.log(data);
                     var mail=data.mail;
                     var token=data.token;
+                    localStorage.setItem("id",data.id);
                     localStorage.setItem("mail", mail);
                     localStorage.setItem("token", token);
+                                                                window.location=data.url;
+                    console.log(data.url)
                 },
                 error:function (data) {
                 console.log(data)
+                    if(data.status == 422)
+                        $("#error").text("Errore di validazione");
+                    else
+                        $("#error").text("Utente o password errati");
                 }
             });
         });
@@ -52,11 +59,7 @@ function Register(url) {
                         password_confirmation:cpsw
                     },
                     success: function (data) {
-                        if ($.isEmptyObject(data.error)) {
-                            alert(data.success);
-                        } else {
-                            alert(data.error);
-                        }
+                        $('#Registero').modal('toggle');
                     }
                 });
             //}
