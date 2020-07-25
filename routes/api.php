@@ -14,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::group(['prefix' => 'user',  'middleware' =>['auth']], function()
+{
+    Route::get('dashboard', 'ProfileController@index');
+});
+
+
+Route::resource('profile', 'ProfileController');
+
 Route::group([
     'middleware' => 'api',
     'prefix' => 'auth'

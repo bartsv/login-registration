@@ -16,8 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['prefix' => 'user',  'middleware' => 'auth'], function()
-{
-    Route::resource('profile', 'ProfileController');
-    Route::post('dashboard', 'ProfileController@index' );
-});
+Route::get('dashboard', 'ProfileController@index');

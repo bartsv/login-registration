@@ -38,7 +38,7 @@ class AuthController extends Controller {
         }
 
         $user = Auth::user();
-        return response()->json(['id'=>$user->id,'name'=>$user->name,'mail'=>$user->email,'url'=>url('user/dashboard'),'token'=>$this->createNewToken($token)],200) ;
+        return response()->json(['id'=>$user->id,'name'=>$user->name,'mail'=>$user->email,'url'=>url('dashboard'),'token'=>$this->createNewToken($token)],200) ;
     }
 
     /**e

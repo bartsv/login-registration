@@ -5,6 +5,7 @@
 </head>
 <body>
 <div>
+    {{$user->name}}
     <header>
         @include('includes.navlogin')
     </header>

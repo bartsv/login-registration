@@ -15,17 +15,15 @@ function Login(url) {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 success: function (data) {
-                    console.log(data);
                     var mail=data.mail;
                     var token=data.token;
                     localStorage.setItem("id",data.id);
                     localStorage.setItem("mail", mail);
                     localStorage.setItem("token", token);
-                                                                window.location=data.url;
-                    console.log(data.url)
+                    window.location.href=data.url;
+                    console.log(data)
                 },
                 error:function (data) {
-                console.log(data)
                     if(data.status == 422)
                         $("#error").text("Errore di validazione");
                     else
